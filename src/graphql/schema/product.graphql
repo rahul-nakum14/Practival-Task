@@ -1,0 +1,51 @@
+type Category {
+  id: ID!
+  name: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Product {
+  id: ID!
+  name: String!
+  description: String!
+  quantity: Int!
+  createdAt: String!
+  updatedAt: String!
+  categories: [Category!]!
+}
+
+type ProductPaginated {
+  products: [Product!]!
+  pagination: PaginationInfo!
+}
+
+type PaginationInfo {
+  currentPage: Int!
+  totalItems: Int!
+  totalPages: Int!
+  pageSize: Int!
+}
+
+
+input ProductInput {
+  name: String!
+  description: String!
+  quantity: Int!
+  categoryIds: [Int!]!
+}
+
+input ProductFilter {
+  search: String
+  categoryIds: [Int!]
+  page: Int
+}
+
+type Query {
+  products(search: String, categoryIds: [Int!], page: Int): ProductPaginated!
+}
+
+type Mutation {
+  createProduct(input: ProductInput!): Product!
+  deleteProduct(id: Int!): Boolean!
+}
