@@ -63,10 +63,10 @@ Create PRoduct
 mutation CreateProduct {
   createProduct(
     input: {
-      name: "iPhone 15"
-      description: "Latest Apple iPhone"
+      name: "productdemo1"
+      description: "productdemo1 des"
       quantity: 10
-      categoryIds: [1, 2]  # Category IDs from seeder
+      categoryIds: [1, 2]  
     }
   ) {
     id
@@ -86,7 +86,7 @@ mutation CreateProduct {
 Search Produt Name
 ===============================
 query SearchProducts {
-  products(search: "iPhone") {
+  products(search: "productdemo1") {
     products {
       id
       name
