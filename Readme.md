@@ -40,15 +40,16 @@ If a product belongs to any of the selected categories, it should appear in the 
 
 
 
-How TO Run ? 
+### How TO Run ? 
 
-docker-compose up -d to start the postgres
+- docker-compose up -d  ------to start the postgres
 
 
-step 1 : npm i 
-step 2: npm run seed
-step 3: npm run migrate
-step 4: npm run dev
+ - step 1 : npm i
+ - step 2: npm run migrate
+- step 3: npm run seed
+
+- step 4: npm run dev
 
 
 .env : DATABASE_URL="postgres_url"
